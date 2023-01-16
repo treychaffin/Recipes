@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[nonumber, index, contents]{cuisine} %https://www.ctan.org/pkg/cuisine
+\usepackage[colorlinks=false, pdfborder={0 0 0}, breaklinks=true]{hyperref} % Add links to generated PDF.
+\usepackage{subfiles} %https://www.ctan.org/pkg/subfiles
+\usepackage[backend=biber, bibstyle=numeric, citestyle=verbose, autocite=footnote]{biblatex}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\addbibresource{../information/references.bib}
+
+
+\title{Recipes}
+\author{Trey Chaffin}
+
+\begin{document}
+\thispagestyle{empty}
+
+\subfile{../information/title.tex}\newpage{}
+
+\pagenumbering{roman}
+\tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\clearpage
+\pagenumbering{arabic}
+
+\section{About Recipes}
+\subfile{../information/aboutrecipes.tex}
+
+\section{Vendors}
+\subfile{../information/vendors.tex}\newpage{}
+
+\section{Seasonings, Rubs, and other Dry Mixes}
+\subfile{../recipes-tex/greek-seasoning.tex}
+\subfile{../recipes-tex/coffee-steak-rub.tex}\newpage{}
+
+\section{Sauces \& Dressings}
+\subfile{../recipes-tex/nacho-cheese-sauce}
+\subfile{../recipes-tex/catalina-dressing.tex}
+\subfile{../recipes-tex/greek-dressing.tex}\newpage{}
+\subfile{../recipes-tex/tzatziki-sauce.tex}
+\subfile{../recipes-tex/jalepeno-lime-aioli.tex}\newpage{}
+\subfile{../recipes-tex/lemon-garlic-tahini.tex}
+\subfile{../recipes-tex/niter-kibbeh.tex}\newpage{}
+\subfile{../recipes-tex/tinga-sauce.tex}\newpage{}
+
+\section{Bakery}
+\subfile{../recipes-tex/biscuits.tex}
+\subfile{../recipes-tex/hamburger-buns.tex}\newpage{}
+
+\section{Soups}
+\subfile{../recipes-tex/zuppa-toscana.tex}\newpage{}
+\subfile{../recipes-tex/pozole.tex} \newpage{}
+
+\section{Salads}
+\subfile{../recipes-tex/broccoli-salad.tex}
+\subfile{../recipes-tex/greek-salad.tex}\newpage{}
+\subfile{../recipes-tex/egg-salad.tex}
+\subfile{../recipes-tex/tuna-salad.tex}\newpage{}
+\subfile{../recipes-tex/super-greens.tex}\newpage{}
+
+\section{Breakfast}
+\subfile{../recipes-tex/pancakes.tex}\newpage{}
+\subfile{../recipes-tex/carrot-cake-oatmeal.tex}\newpage{}
+\subfile{../recipes-tex/bacon-potato-egg-casserole.tex}\newpage{}
+
+\section{Lunches \& Dinners}
+\subfile{../recipes-tex/tibs.tex}
+\subfile{../recipes-tex/gomen.tex}\newpage{}
+\subfile{../recipes-tex/beef-tacos.tex}
+\subfile{../recipes-tex/kebabs.tex}\newpage{}
+\subfile{../recipes-tex/yellow-cauliflower-rice.tex}
+\subfile{../recipes-tex/mediterranean-cauliflower-rice-meal-prep.tex}
+\subfile{../recipes-tex/bierocks.tex}\newpage{}
+\subfile{../recipes-tex/chili.tex}
+\subfile{../recipes-tex/beef-street-tacos}\newpage{}
+\subfile{../recipes-tex/mac-and-cheese.tex}\newpage{}
+\subfile{../recipes-tex/smoked-mississippi-pork-roast.tex}
+\subfile{../recipes-tex/andhra-mutton-curry.tex}\newpage{}
+\subfile{../recipes-tex/black-pepper-angus-steak.tex}\newpage{}
+
+
+\section{References}
+\printbibliography[heading=none]
+
+\end{document}
+
