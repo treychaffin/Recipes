@@ -54,31 +54,80 @@ eggs.vitamin_e = 8
 eggs.zinc = 0
 eggs.product_url = 'https://www.dillons.com/p/simple-truth-natural-cage-free-large-brown-eggs/0001111079770'
 
+green_chiles = ingredient('green chiles')
+green_chiles.servings = 4
+green_chiles.calories = 5
+green_chiles.sodium = 95
+green_chiles.carbohydrate = 1
+green_chiles.iron = 0.36
+green_chiles.product_url = 'https://www.dillons.com/p/kroger-diced-green-chile-peppers/0001111084009'
+
+sausage = ingredient('breakfast sausage links')
+sausage.servings = 8 / 3
+sausage.calories = 170
+sausage.fat = 13
+sausage.saturated_fat = 4.5
+sausage.cholesterol = 45
+sausage.sodium = 560
+sausage.carbohydrate = 2
+sausage.sugar = 1
+sausage.protein = 10
+sausage.iron = 1.1
+sausage.potassium = 70
+sausage.product_url = 'https://www.dillons.com/p/kroger-original-breakfast-sausage-links/0001111097293'
+
+tortilla = ingredient('tortilla')
+tortilla.servings = 8
+tortilla.calories = 110
+tortilla.fat = 4
+tortilla.saturated_fat = 1.5
+tortilla.sodium = 450
+tortilla.carbohydrate = 31
+tortilla.fiber = 23
+tortilla.protein = 8
+tortilla.calcium = 100
+tortilla.iron = 1
+tortilla.potassium = 30
+tortilla.product_url = 'https://www.dillons.com/p/mission-carb-balance-low-carb-whole-wheat-burrito-tortillas/0007373100118'
+
+cheese = ingredient('mexican blend shredded cheese')
+cheese.servings = 8
+cheese.calories = 110
+cheese.fat = 9
+cheese.saturated_fat = 5
+cheese.cholesterol = 25
+cheese.sodium = 170
+cheese.carbohydrate = 1
+cheese.protein = 6
+cheese.calcium = 210
+
+salt = ingredient('salt')
+salt.servings = 1
+salt.sodium = 2325
+salt.calcium = 1.4
+salt.potassium = 0.5
+salt.nutrition_url = 'https://www.nutritionvalue.org/Salt%2C_table_nutritional_value.html?size=1+tsp+%3D+6+g'
+
+pepper = ingredient('black pepper')
+pepper.servings = 1
+pepper.fat = 0.1
+pepper.sodium = 0.5
+pepper.carbohydrate = 1.5
+pepper.fiber = 0.6
+pepper.protein = 0.2
+pepper.calcium = 10
+pepper.iron = 0.2
+pepper.potassium = 31
+
 
 breakfast_burritos.add_ingredient(avocado_oil)
 breakfast_burritos.add_ingredient(russet_potato)
 breakfast_burritos.add_ingredient(eggs)
+breakfast_burritos.add_ingredient(green_chiles)
+breakfast_burritos.add_ingredient(sausage)
+breakfast_burritos.add_ingredient(tortilla)
+breakfast_burritos.add_ingredient(cheese)
+breakfast_burritos.add_ingredient(salt)
+breakfast_burritos.add_ingredient(pepper)
 
-print(breakfast_burritos.name)
-print('           calories: ',breakfast_burritos.calories())
-print('                fat: ',breakfast_burritos.fat())
-print('      saturated fat: ',breakfast_burritos.saturated_fat())
-print('          trans fat: ',breakfast_burritos.trans_fat())
-print('polyunsaturated fat: ',breakfast_burritos.polyunsaturated_fat())
-print('monounsaturated fat: ',breakfast_burritos.monounsaturated_fat())
-print('        cholesterol: ',breakfast_burritos.cholesterol())
-print('             sodium: ',breakfast_burritos.sodium())
-print('       carbohydrate: ',breakfast_burritos.carbohydrate())
-print('              fiber: ',breakfast_burritos.fiber())
-print('              sugar: ',breakfast_burritos.sugar())
-print('            protein: ',breakfast_burritos.protein())
-print('            calcium: ',breakfast_burritos.calcium())
-print('               iron: ',breakfast_burritos.iron())
-print('         phosphorus: ',breakfast_burritos.phosphorus())
-print('          potassium: ',breakfast_burritos.potassium())
-print('         riboflavin: ',breakfast_burritos.riboflavin())
-print('          vitamin a: ',breakfast_burritos.vitamin_a())
-print('          vitamin c: ',breakfast_burritos.vitamin_c())
-print('          vitamin d: ',breakfast_burritos.vitamin_d())
-print('          vitamin e: ',breakfast_burritos.vitamin_e())
-print('               zinc: ',breakfast_burritos.zinc())
+breakfast_burritos.latex_nutrition_label()

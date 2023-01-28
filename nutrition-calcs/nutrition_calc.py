@@ -2,19 +2,34 @@ class ingredient:
     def __init__(self, name):
         self.name = name
 
-    # nutrition facts per serving (grams)
+    # calories
     calories = 0
 
+    # fat (grams)
     fat = 0
+
+    # saturated fat (grams)
     saturated_fat = 0
+
+    # trans fat (grams)
     trans_fat = 0
+
+    # polyunsaturated fat (grams)
     polyunsaturated_fat = 0
+
+    # monounsaturated fat (grams)
     monounsaturated_fat = 0
 
+    # carbohydrate (grams)
     carbohydrate = 0
+
+    # sugar (grams)
     sugar = 0
+
+    # fiber (grams)
     fiber = 0
 
+    # protein (grams)
     protein = 0
 
     # sodium (milligrams)
@@ -227,3 +242,67 @@ class recipe:
         for i in range(len(self.ingredients)):
             zinc += self.ingredients[i].zinc * self.ingredients[i].servings
         return zinc / self.servings
+
+    # print nutrition facts
+    def nutrition_facts(self):
+        print('    Nutrition Facts: ',self.name)
+        print('')
+        print('           calories: ',round(self.calories(),2))
+        print('                fat: ',round(self.fat(),2))
+        print('      saturated fat: ',round(self.saturated_fat(),2))
+        print('          trans fat: ',round(self.trans_fat(),2))
+        print('polyunsaturated fat: ',round(self.polyunsaturated_fat(),2))
+        print('monounsaturated fat: ',round(self.monounsaturated_fat(),2))
+        print('        cholesterol: ',round(self.cholesterol(),2))
+        print('             sodium: ',round(self.sodium(),2))
+        print('       carbohydrate: ',round(self.carbohydrate(),2))
+        print('              fiber: ',round(self.fiber(),2))
+        print('              sugar: ',round(self.sugar(),2))
+        print('            protein: ',round(self.protein(),2))
+        print('            calcium: ',round(self.calcium(),2))
+        print('               iron: ',round(self.iron(),2))
+        print('         phosphorus: ',round(self.phosphorus(),2))
+        print('          potassium: ',round(self.potassium(),2))
+        print('         riboflavin: ',round(self.riboflavin(),2))
+        print('          vitamin a: ',round(self.vitamin_a(),2))
+        print('          vitamin c: ',round(self.vitamin_c(),2))
+        print('          vitamin d: ',round(self.vitamin_d(),2))
+        print('          vitamin e: ',round(self.vitamin_e(),2))
+        print('               zinc: ',round(self.zinc(),2))
+
+    def latex_nutrition_label(self):
+        print("\\begin{tabular}{|lr|}")
+        print('    \hline')
+        print('    & \\\\')
+        print('    \multicolumn{2}{|l|}{\huge{\\textbf{\\textrm{Nutrition Facts}}}}')
+        print('    \\\\ [0.5ex] \hline')
+        print('    \multicolumn{2}{|l|}{\\textrm{Serving Size: 1}} \\\\ [0.5ex]') 
+        print('    \multicolumn{2}{|l|}{\\textrm{Servings per Recipe: ',self.servings,'}}')
+        print('    \\\\ \\noalign{\hrule height 3pt}')
+        print('    \multicolumn{2}{|l|}{\\footnotesize{\\textbf{\\textrm{Amount per Serving}}}}')
+        print('    \\\\')
+        print('    \\textbf{\\textrm{Calories (kcal)}}            & \\textbf{',round(self.calories(),2),'}')
+        print('    \\\\ \\noalign{\hrule height 2pt}')
+        print('    \\textbf{\\textrm{Fat (g)}}                      & \\textrm{',round(self.fat(),2),'}  \\\\ \hline')
+        print('    \hspace{2mm} \\textrm{Saturated Fat (g)}        & \\textrm{',round(self.saturated_fat(),2),'}  \\\\ \hline')
+        print('    \hspace{2mm} \\textrm{Trans Fat (g)}            & \\textrm{',round(self.trans_fat(),2),'}      \\\\ \hline')
+        print('    \hspace{2mm} \\textrm{Polyunsaturated Fat (g)}  & \\textrm{',round(self.polyunsaturated_fat(),2),'}   \\\\ \hline')
+        print('    \hspace{2mm} \\textrm{Monounsaturated Fat (g)}  & \\textrm{',round(self.monounsaturated_fat(),2),'}   \\\\ \hline')
+        print('    \\textbf{\\textrm{Cholesterol (mg)}}             & \\textrm{',round(self.cholesterol(),2),'}  \\\\ \hline')
+        print('    \\textbf{\\textrm{Sodium (mg)}}                  & \\textrm{',round(self.sodium(),2),'} \\\\ \hline')
+        print('    \\textbf{\\textrm{Carbohydrates (g)}}            & \\textrm{',round(self.carbohydrate(),2),'}  \\\\ \hline')
+        print('    \hspace{2mm} \\textrm{Sugar (g)}                & \\textrm{',round(self.sugar(),2),'}   \\\\ \hline')
+        print('    \hspace{2mm} \\textrm{Fiber (g)}                & \\textrm{',round(self.fiber(),2),'}  \\\\ \hline')
+        print('    \\textbf{\\textrm{Protein (g)}}                  & \\textrm{',round(self.protein(),2),'}')
+        print('    \\\\ \\noalign{\hrule height 3pt}')
+        print('    \\textbf{Calcium} \\textrm{',round(self.calcium(),2),' mg}      &')
+        print('    \multicolumn{1}{|l|}{\\textbf{Iron} \\textrm{',round(self.iron(),2),' mg}}            \\\\ \hline')
+        print('    \\textbf{Phosphorus} \\textrm{',round(self.phosphorus(),2),' mg}   &')
+        print('    \multicolumn{1}{|l|}{\\textbf{Potassium} \\textrm{',round(self.potassium(),2),' mg}}     \\\\ \hline')
+        print('    \\textbf{Riboflavin} \\textrm{',round(self.riboflavin(),2),' mg}  &')
+        print('    \multicolumn{1}{|l|}{\\textbf{Vitamin A} \\textrm{',round(self.vitamin_a(),2),'IU }}        \\\\ \hline')
+        print('    \\textbf{Vitamin C} \\textrm{',round(self.vitamin_c(),2),' mg}      &')
+        print('    \multicolumn{1}{|l|}{\\textbf{Vitamin D} \\textrm{',round(self.vitamin_d(),2),' IU}}         \\\\ \hline')
+        print('    \\textbf{Vitamin E} \\textrm{',round(self.vitamin_e(),2),' IU}     &')
+        print('    \multicolumn{1}{|l|}{\\textbf{Zinc} \\textrm{',round(self.zinc(),2),' mg}}               \\\\ \hline')
+        print('\end{tabular}')
