@@ -19,13 +19,13 @@ This section describes how to setup and use this repository
 Install the following software, using [chocolatey](https://chocolatey.org/install)
 
 - Visual Studio Code
-    - > choco install vscode
+    - `choco install vscode`
 - MikTex
-    - > choco install miktek
+    - `choco install miktek`
 - Perl
-    - > choco install strawberryperl
+    - `choco install strawberryperl`
 - Python
-    - > choco install anaconda3
+    - `choco install anaconda3`
 
 ## Nutrition Calculator
 
@@ -40,29 +40,29 @@ nutrition-calcs folder, naming it after the recipe with a .py extension.
 Start by importing the nutrition_calc.py file to have access to the 
 ingredient and recipe class
 
-> from nutrition_calc import *
+`from nutrition_calc import *`
 
 #### Create Recipe Object
 
 Start by creating a recipe object. Define the name of recipe when calling the 
 recipe class.
 
-> breakfast_burritos = recipe('breakfast burritos')
+`breakfast_burritos = recipe('breakfast burritos')`
 
 Define the number of servings
 
-> breakfast_burritos.servings = 8
+`breakfast_burritos.servings = 8`
 
 #### Define Ingredients
 
 Define an ingredient by creating a ingredient object. Define the name of the 
 ingredient when calling the ingredient class
 
-> eggs = ingredient('eggs')
+`eggs = ingredient('eggs')`
 
 Define the number of servings of the given ingredient used in the recipe
 
-> eggs.servings = 12
+`eggs.servings = 12`
 
 Define the nutrition facts per serving of the ingredient. All nutrients default to
 zero, so it isn't necessary to explicity define the nutrients if the quantity per
@@ -150,7 +150,7 @@ within the recipe class.
 
 Example:
 
-> breakfast_burritos.nutrition_facts()
+`breakfast_burritos.nutrition_facts()`
 
 Output:
 ```
@@ -187,7 +187,7 @@ To generate a nutrition label table to be used within a LaTex document, use the
 
 Example:
 
-> breakfast_burritos.latex_nutrition_label()
+`breakfast_burritos.latex_nutrition_label()`
 
 Output:
 
