@@ -55,7 +55,7 @@ eggs.zinc = 0
 eggs.product_url = 'https://www.dillons.com/p/simple-truth-natural-cage-free-large-brown-eggs/0001111079770'
 
 green_chiles = ingredient('green chiles')
-green_chiles.servings = 4
+green_chiles.servings = 8
 green_chiles.calories = 5
 green_chiles.sodium = 95
 green_chiles.carbohydrate = 1
@@ -63,7 +63,7 @@ green_chiles.iron = 0.36
 green_chiles.product_url = 'https://www.dillons.com/p/kroger-diced-green-chile-peppers/0001111084009'
 
 sausage = ingredient('breakfast sausage links')
-sausage.servings = 8 / 3
+sausage.servings = 4.5
 sausage.calories = 170
 sausage.fat = 13
 sausage.saturated_fat = 4.5
