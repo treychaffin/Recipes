@@ -29,6 +29,9 @@ class ingredient:
     # fiber (grams)
     fiber = 0
 
+    # sugar alcohols (grams)
+    sugar_alcohols = 0
+
     # protein (grams)
     protein = 0
 
@@ -151,6 +154,13 @@ class recipe:
         for i in range(len(self.ingredients)):
             fiber += self.ingredients[i].fiber * self.ingredients[i].servings
         return fiber / self.servings
+    
+    # sugar alcohols per serving
+    def sugar_alcohols(self):
+        sugar_alcohols = 0
+        for i in range(len(self.ingredients)):
+            sugar_alcohols += self.ingredients[i].sugar_alcohols * self.ingredients[i].servings
+        return sugar_alcohols / self.servings
 
     # protein per serving
     def protein(self):
@@ -257,6 +267,8 @@ class recipe:
         print('             sodium: ',round(self.sodium(),2))
         print('       carbohydrate: ',round(self.carbohydrate(),2))
         print('              fiber: ',round(self.fiber(),2))
+        if self.sugar_alcohols() > 0:
+            print('    sugar alcohols: ',round(self.sugar_alcohols(),2))
         print('              sugar: ',round(self.sugar(),2))
         print('            protein: ',round(self.protein(),2))
         print('            calcium: ',round(self.calcium(),2))
@@ -291,6 +303,8 @@ class recipe:
         print('    \\textbf{\\textrm{Cholesterol (mg)}}             & \\textrm{',round(self.cholesterol(),2),'}  \\\\ \hline')
         print('    \\textbf{\\textrm{Sodium (mg)}}                  & \\textrm{',round(self.sodium(),2),'} \\\\ \hline')
         print('    \\textbf{\\textrm{Carbohydrates (g)}}            & \\textrm{',round(self.carbohydrate(),2),'}  \\\\ \hline')
+        if self.sugar_alcohols() > 0:
+            print('    \hspace{2mm} \\textrm{Sugar Alcohols (g)}       & \\textrm{',round(self.sugar_alcohols(),2),'}   \\\\ \hline')
         print('    \hspace{2mm} \\textrm{Sugar (g)}                & \\textrm{',round(self.sugar(),2),'}   \\\\ \hline')
         print('    \hspace{2mm} \\textrm{Fiber (g)}                & \\textrm{',round(self.fiber(),2),'}  \\\\ \hline')
         print('    \\textbf{\\textrm{Protein (g)}}                  & \\textrm{',round(self.protein(),2),'}')
